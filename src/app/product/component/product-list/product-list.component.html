@@ -1,0 +1,47 @@
+<div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Name</th>
+                <th scope="col" class="text-center">Description</th>
+                <th scope="col" class="text-center">Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products$ | async">
+                <td class="text-center">{{product.name}}</td>
+                <td class="text-center">{{product.description}}</td>
+                <td class="text-center">
+                    <button (click)="showUpdateForm(product)" class="btn btn-success btn-sm" style="margin: 5px;"><small>Update</small></button>
+                    <button (click)="deleteProduct(product.id)" class="btn btn-danger btn-sm" style="margin: 5px;"><small>Delete</small></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="isUpdateActivated" class="mx-auto">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Product</h5>
+                <button (click)="hideUpdateForm()" type="button" class="btn-close" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form (ngSubmit)="updateProduct(updateForm)" #updateForm="ngForm" >
+                    <div class="form-group">
+                        <label for="name">Product Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required [(ngModel)]="productToBeUpdated.name">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="description">Dscription</label>
+                        <input type="text" id="description" name="description" class="form-control" required [(ngModel)]="productToBeUpdated.description">
+                    </div>
+                    <div class="modal-footer mt-3">
+                        <button class="btn btn-primary" [disabled]="updateForm.invalid" type="submit">Update</button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>

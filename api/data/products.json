@@ -1,0 +1,17 @@
+{
+  "5a524747-3849-41e1-8615-1122573cde5e": {
+    "id": "5a524747-3849-41e1-8615-1122573cde5e",
+    "name": "Product #1",
+    "description": "This is product #1"
+  },
+  "c6236002-ea54-4725-8891-295d9840ff7c": {
+    "id": "c6236002-ea54-4725-8891-295d9840ff7c",
+    "name": "Product #2",
+    "description": "This is product #2"
+  },
+  "45c296de-cda4-4599-a2ae-6f8b06041247": {
+    "id": "45c296de-cda4-4599-a2ae-6f8b06041247",
+    "name": "Product #3",
+    "description": "This is product #3"
+  }
+}
